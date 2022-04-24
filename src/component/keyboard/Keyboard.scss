@@ -1,0 +1,51 @@
+@mixin center-align-text {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.keyboard {
+	margin: 0 auto;
+	width: 25rem;
+	.active {
+		box-shadow: 0px 4px 8px darken(dodgerblue, 30%);
+		transform: scale(0.98);
+	}
+	.drum-pad {
+		height: 5rem;
+		background-color: #35cac5;
+
+		@include center-align-text();
+
+		cursor: pointer;
+		box-shadow: 0px 5px 10px darken(dodgerblue, 40%);
+		transition: all 0.3s;
+		border-radius: 5px;
+
+		&:hover {
+			box-shadow: 0px 15px 25px -5px darken(dodgerblue, 40%);
+			transform: scale(1.03);
+		}
+		&:active {
+			box-shadow: 0px 4px 8px darken(dodgerblue, 30%);
+			transform: scale(0.98);
+		}
+
+
+		.text {
+			font-size: 1.5rem;
+			cursor: pointer;
+		}
+	}
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
